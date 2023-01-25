@@ -1,0 +1,37 @@
+query PRODUCT_ALL($PAGE: Int!) {
+  products(pagination: { pageSize: $PAGE}) {
+    meta {
+      pagination {
+        total
+        page
+        pageSize
+        pageCount
+      }
+    }
+    data {
+      id
+      attributes {
+        Name
+        Art
+        Price
+        SalePrice
+        Desc
+        UID
+        Model
+        Active
+        Characteristic {
+          Proizvidotel
+          Kolvo
+          Razmer
+        }
+        Img {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}

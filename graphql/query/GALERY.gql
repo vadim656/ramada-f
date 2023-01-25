@@ -1,0 +1,15 @@
+query GALERY {
+  galeries {
+    data {
+      attributes {
+        Img {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}

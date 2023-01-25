@@ -1,0 +1,21 @@
+query PRODUCT_SEARCH($NAME: String!) {
+  search(query: $NAME) {
+    products {
+      data {
+          id
+        attributes {
+          Name
+          Price
+          Art
+          Img {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

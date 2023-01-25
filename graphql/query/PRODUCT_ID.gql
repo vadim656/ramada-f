@@ -1,0 +1,55 @@
+query PRODUCT_ID($ID: ID) {
+  product(id: $ID) {
+    data {
+      id
+      attributes {
+        Name
+        Art
+        Price
+        SalePrice
+        Desc
+        UID
+        Model
+        Active
+        Characteristic {
+          Proizvidotel
+          Kolvo
+          Razmer
+        }
+        Img {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        up_sales {
+          data {
+            id
+            attributes {
+              Name
+        Art
+        Price
+        SalePrice
+        Desc
+        UID
+        Model
+        Characteristic {
+          Proizvidotel
+          Kolvo
+          Razmer
+        }
+              Img {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
