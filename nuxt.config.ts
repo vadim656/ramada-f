@@ -24,13 +24,13 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // Keys within public are also exposed client-side
     public: {
-      apiBase: 'http://localhost:1337'
+      apiBase: 'https://admin.ramada.pro:1337'
     }
   },
   apollo: {
     clients: {
       default: {
-        httpEndpoint: 'http://localhost:1337/graphql'
+        httpEndpoint: 'https://admin.ramada.pro:1337/graphql'
       }
     }
   },
