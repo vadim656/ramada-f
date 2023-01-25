@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto flex flex-col gap-6">
     <h-h-3>Почему Ramada?</h-h-3>
-    <div class="grid grid-cols-2 gap-6">
+    <div class="grid grid-cols-2 gap-6" v-if="ramada">
       <div
         v-for="item in ramada.pochemuRamadas.data"
         :key="item.id"
