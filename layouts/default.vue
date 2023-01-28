@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative px-2">
     <the-header class="" />
     <div class="pt-20">
    

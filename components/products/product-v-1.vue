@@ -13,19 +13,34 @@
       >{{ data.attributes.Name }}
     </nuxt-link>
     <div class="flex flex-col text-sm">
+      <div
+        class="flex gap-2 w-full justify-start"
+        v-if="data.attributes.Characteristic.Proizvidotel"
+      >
+        <span class=""
+          >Производитель:
+          {{ data.attributes.Characteristic.Proizvidotel }}</span
+        >
+      </div>
       <!-- <div class="flex gap-2 w-full justify-start">
         <span class="">Модель: {{ data.attributes.Model }}</span>
       </div> -->
-      <div class="flex gap-2 w-full justify-start">
-        <span class="">Размер: {{ data.attributes.Characteristic.Razmer }}</span>
-        
+      <div
+        class="flex gap-2 w-full justify-start"
+        v-if="data.attributes.Characteristic.Razmer"
+      >
+        <span class=""
+          >Размер: {{ data.attributes.Characteristic.Razmer }}</span
+        >
       </div>
     </div>
 
     <div class="flex justify-between items-center w-full">
       <div class="flex flex-col">
         <span>Цена:</span>
-        <span class="text-xl">{{ data.attributes.Price.toLocaleString('ru-RU') }} ₽ / шт</span>
+        <span class="text-xl"
+          >{{ data.attributes.Price.toLocaleString('ru-RU') }} ₽ / шт</span
+        >
       </div>
 
       <b-add-cart :dataModal="data" @click="formOpen" />

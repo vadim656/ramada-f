@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto">
-    <div class="w-full grid grid-cols-[8fr,4fr]">
+    <div class="w-full grid grid-cols-1 gap-4 sm:gap-0 sm:grid-cols-[8fr,4fr]">
       <img src="~/assets/img/footer-form.png" alt="" />
       <div class="flex flex-col gap-6 ">
         <div class="flex flex-col gap-2 ">
@@ -46,7 +46,7 @@
           </svg>
           <span class="text-base text-white">Оставить заявку</span>
         </button>
-        <span class="text-sm text-neutral-400"
+        <span class="text-sm text-neutral-400 text-center"
           >Оставляя заявку, вы соглашаетесь с условиями
           <nuxt-link class="underline underline-offset-4" to="/"
             >политики конфиденциальности и обработки персональных

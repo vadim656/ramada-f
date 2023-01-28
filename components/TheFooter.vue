@@ -1,14 +1,14 @@
 <template>
   <div class=" bg-neutral-50">
-    <div class="container mx-auto py-12 flex justify-between">
+    <div class="container mx-auto py-12 flex flex-col sm:flex-row justify-between">
       <div class="flex flex-col gap-10">
         <nuxt-link to="/">
           <img src="~/assets/img/logo-black.svg" alt="" />
         </nuxt-link>
-        <div class="flex gap-10">
+        <div class="flex flex-col sm:flex-row gap-10">
           <div class="flex flex-col gap-2">
             <span class="text-xl font-semibold">Меню</span>
-            <ul class="flex  gap-3">
+            <ul class="flex flex-col sm:flex-row  gap-3">
               <nuxt-link to="/">Главная</nuxt-link>
               <nuxt-link to="/">Каталог</nuxt-link>
               <nuxt-link to="/">Услуги</nuxt-link>
@@ -27,21 +27,21 @@
           </div> -->
         </div>
         <div class="flex justify-between gap-10">
-          <div class="flex gap-2 text-sm">
-            <span>ООО “РУ.ТРЕЙД”ИНН/КПП/ОГРН </span>
-            <span>9102206906/91020001/1169102062293г. </span>
+          <div class="flex flex-col sm:flex-row gap-2 text-sm">
+            <span>ООО “РУ.ТРЕЙД” ИНН/КПП/ОГРН </span>
+            <span>4705097052/470501001/1224700017464</span>
             <span>Симферополь ул. Генерала Васильева 22А</span>
           </div>
           
         </div>
       </div>
-      <div class="flex flex-col justify-between items-end">
+      <div class="flex flex-col  justify-between items-start my-2 gap-2  sm:items-end">
         <!-- <img
           src="~/assets/img/oplata.png"
           alt=""
           class="w-full max-w-[100px] h-auto"
         /> -->
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col  gap-2">
             <nuxt-link class="underline underline-offset-4" to="/"
               >Условия и соглашения</nuxt-link
             >

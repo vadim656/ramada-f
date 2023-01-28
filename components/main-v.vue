@@ -1,16 +1,18 @@
 <template>
   <div class="container mx-auto relative h-[730px]">
-    <div class="w-full flex justify-between h-full">
-      <div class=" w-1/2 h-full flex items-start flex-col gap-6 justify-center">
-        <span class="text-5xl leading-tight">
+    <div class="w-full flex flex-col sm:flex-row justify-between gap-4 h-full">
+      <div
+        class=" w-full sm:w-1/2 h-full flex items-start flex-col gap-6 justify-start sm:justify-center"
+      >
+        <span class="text-3xl sm:text-5xl leading-tight pt-4 sm:pt-0">
           <b> Модульные беседки и навесы</b> из клееного бруса из металлических
           соединений
         </span>
-        <span class="text-2xl"
+        <span class="text-base sm:text-2xl"
           >для частного и коммерческого использования напрямую от
           производителя!</span
         >
-        <div class="flex justify-between gap-6">
+        <div class="flex flex-col sm:flex-row justify-between gap-3 sm:gap-6">
           <b-arrows-form @click="$refs.modalMain.show = true"
             >Оставить заявку</b-arrows-form
           >
@@ -18,13 +20,13 @@
             >Перейти в каталог</b-arrows-form
           >
         </div>
-        <div class=" w-1/2">
-          <img
-            class="absolute top-10 right-0 z-[1]"
-            src="~/assets/img/main-v.png"
-            alt=""
-          />
-        </div>
+      </div>
+      <div class="sm:w-1/2">
+        <img
+          class=""
+          src="~/assets/img/main-v.png"
+          alt=""
+        />
       </div>
     </div>
     <ModalMain ref="modalMain" />

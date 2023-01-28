@@ -1,19 +1,25 @@
 <template>
   <div class="container mx-auto flex flex-col gap-6">
     <h-h-3>Почему Ramada?</h-h-3>
-    <div class="grid grid-cols-2 gap-6" v-if="ramada">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" v-if="ramada">
       <div
         v-for="item in ramada.pochemuRamadas.data"
         :key="item.id"
-        class="grid grid-cols-[1fr,4fr] grid-rows-2 p-6 border rounded-md"
+        class="grid grid-cols-[1fr,4fr]  p-3 gap-3 sm:p-6 border rounded-md"
       >
         <img
-          class="col-span-1 row-span-2"
+          class="col-span-1"
           :src="runtimeConfig.apiBase + item.attributes.Img.data.attributes.url"
           alt=""
         />
-        <span class="col-span-1 text-2xl">{{ item.attributes.H1 }}</span>
-        <span class="col-span-1">{{ item.attributes.H2 }}</span>
+        <div class="flex flex-col gap-2">
+          <span class="col-span-1 text-xl sm:text-2xl">{{
+            item.attributes.H1
+          }}</span>
+          <span class="col-span-1 text-sm">{{
+            item.attributes.H2
+          }}</span>
+        </div>
       </div>
     </div>
   </div>

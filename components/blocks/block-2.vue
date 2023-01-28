@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto flex flex-col gap-6">
     <HeadersHH3>Каталог беседок и навесов</HeadersHH3>
-    <div class="grid grid-cols-3 gap-6" v-if="data">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" v-if="data">
       <productsProductV1
         v-for="item in data.products.data"
         :key="item.id"

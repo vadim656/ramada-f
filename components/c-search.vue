@@ -1,7 +1,7 @@
 <template>
   <div class="w-full relative">
     <div
-      class="w-full py-4 pl-4 border-2 flex gap-2 justify-start items-center bg-white z-[2]"
+      class="w-full py-2 sm:py-4 pl-2 sm:pl-4 border border-neutral-400 flex gap-2 justify-start items-center bg-white z-[2]"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

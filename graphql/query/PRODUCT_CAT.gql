@@ -1,0 +1,53 @@
+query PRODUCT_CAT($PAGE: Int! , $URL: String) {
+  products(
+    pagination: { pageSize: $PAGE},
+    filters: {
+      categories: {
+        URL : {
+          eq: $URL
+        }
+      }
+    }
+  ) {
+    meta {
+      pagination {
+        total
+        page
+        pageSize
+        pageCount
+      }
+    }
+    data {
+      id
+      attributes {
+        Name
+        Art
+        Price
+        SalePrice
+        Desc
+        UID
+        Model
+        Active
+        categories{
+          data{
+            attributes{
+              Name
+            }
+          }
+        }
+        Characteristic {
+          Proizvidotel
+          Kolvo
+          Razmer
+        }
+        Img {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}

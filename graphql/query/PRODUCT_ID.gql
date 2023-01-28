@@ -12,9 +12,25 @@ query PRODUCT_ID($ID: ID) {
         Model
         Active
         Characteristic {
+          id
           Proizvidotel
           Kolvo
           Razmer
+        }
+        ColorDerevo {
+          id
+          Name
+          Price
+        }
+        ColorMetal {
+          id
+          Name
+          Price
+        }
+        Specifics {
+          id
+          Name
+          Value
         }
         Img {
           data {
@@ -28,17 +44,17 @@ query PRODUCT_ID($ID: ID) {
             id
             attributes {
               Name
-        Art
-        Price
-        SalePrice
-        Desc
-        UID
-        Model
-        Characteristic {
-          Proizvidotel
-          Kolvo
-          Razmer
-        }
+              Art
+              Price
+              SalePrice
+              Desc
+              UID
+              Model
+              Characteristic {
+                Proizvidotel
+                Kolvo
+                Razmer
+              }
               Img {
                 data {
                   attributes {

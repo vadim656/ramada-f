@@ -1,0 +1,53 @@
+query PRODUCT_FILTERS($PAGE: Int!) {
+  products(
+    pagination: { pageSize: $PAGE},
+    filters: {
+      categories: {
+        Name : {
+          eq: "Навесы"
+        }
+      }
+    }
+  ) {
+    meta {
+      pagination {
+        total
+        page
+        pageSize
+        pageCount
+      }
+    }
+    data {
+      id
+      attributes {
+        Name
+        Art
+        Price
+        SalePrice
+        Desc
+        UID
+        Model
+        Active
+        categories{
+          data{
+            attributes{
+              Name
+            }
+          }
+        }
+        Characteristic {
+          Proizvidotel
+          Kolvo
+          Razmer
+        }
+        Img {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}

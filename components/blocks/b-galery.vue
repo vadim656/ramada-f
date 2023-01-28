@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto flex flex-col gap-6">
     <h-h-3>Галерея</h-h-3>
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
       <div v-for="(item, i) in galery.galeries.data" :key="item.id" class="w-full h-full">
         <img
           :src="

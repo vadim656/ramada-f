@@ -1,0 +1,16 @@
+query CATEGORY_ALL {
+  categories(pagination: { limit: 100 }) {
+    data {
+      id
+      attributes {
+        Name
+        URL
+        tovaries {
+          data {
+            id
+          }
+        }
+      }
+    }
+  }
+}
