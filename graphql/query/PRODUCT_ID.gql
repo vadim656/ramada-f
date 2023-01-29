@@ -14,7 +14,6 @@ query PRODUCT_ID($ID: ID) {
         Characteristic {
           id
           Proizvidotel
-          Kolvo
           Razmer
         }
         ColorDerevo {
@@ -52,7 +51,6 @@ query PRODUCT_ID($ID: ID) {
               Model
               Characteristic {
                 Proizvidotel
-                Kolvo
                 Razmer
               }
               Img {

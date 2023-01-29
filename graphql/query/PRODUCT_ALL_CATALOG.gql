@@ -21,7 +21,6 @@ query PRODUCT_ALL_CATALOG($PAGE: Int!) {
         Active
         Characteristic {
           Proizvidotel
-          Kolvo
           Razmer
         }
         Img {

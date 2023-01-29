@@ -37,7 +37,6 @@ query PRODUCT_CAT($PAGE: Int! , $URL: String) {
         }
         Characteristic {
           Proizvidotel
-          Kolvo
           Razmer
         }
         Img {

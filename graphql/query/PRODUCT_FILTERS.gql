@@ -37,7 +37,6 @@ query PRODUCT_FILTERS($PAGE: Int!) {
         }
         Characteristic {
           Proizvidotel
-          Kolvo
           Razmer
         }
         Img {

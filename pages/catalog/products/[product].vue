@@ -9,6 +9,27 @@ const { data } = await useAsyncQuery(PRODUCT_ID, variables)
 
 const colorDerevo = reactive({ colorId: 1 })
 const colorMetal = reactive({ colorId: 1 })
+
+const modalForm = ref(null)
+const modalConsult = ref(null)
+
+const zakazOrder = product => {
+  modalForm.value.show.val = true
+  modalForm.value.data = product
+}
+
+const reqProduct = product => {
+  modalConsult.value.show.val = true
+  modalConsult.value.data = product
+}
+
+
+const productOpenModal = product => {
+  modalForm.value.show.val = true
+  modalForm.value.data = product
+}
+
+
 </script>
 <template>
   <div class="container mx-auto relative">
@@ -52,7 +73,7 @@ const colorMetal = reactive({ colorId: 1 })
           <div class="hidden sm:flex flex-col gap-2">
             <span class="font-semibold text-lg">У вас есть вопросы?</span>
             <button
-              @click="$refs.modalConsult.show = true"
+              @click="reqProduct(data.product.data)"
               class="flex gap-2 hover:gap-4 justify-center items-center group  hover:bg-neutral-700 border border-neutral-700 py-6 rounded-md anime lg:max-w-[320px]"
             >
               <svg
@@ -99,10 +120,7 @@ const colorMetal = reactive({ colorId: 1 })
               <span>В заказе: 1</span>
             </div>
             <button
-              @click="
-                ;($refs.modalForm.show = true),
-                  ($refs.modalForm.data = data.product.data)
-              "
+              @click="zakazOrder(data.product.data)"
               class="flex gap-2 hover:gap-4 justify-center items-center bg-neutral-800 hover:bg-neutral-700 py-6 rounded-md anime w-full"
             >
               <svg
@@ -131,11 +149,19 @@ const colorMetal = reactive({ colorId: 1 })
               <div
                 v-for="item in data.product.data.attributes.Specifics"
                 :key="item.id"
-                :class="[item.Value !==  'b'? 'border-b border-neutral-200': '' ]"
+                :class="[
+                  item.Value !== 'b' ? 'border-b border-neutral-200' : ''
+                ]"
               >
                 <div class="flex justify-between items-center w-full pb-1">
-                  <span class="w-4/5" :class="[item.Value !==  'b'? '': 'font-semibold' ]">{{ item.Name }}</span>
-                  <span class="w-1/5 text-right" v-if="item.Value !== 'b'">{{ item.Value }}</span>
+                  <span
+                    class="w-4/5"
+                    :class="[item.Value !== 'b' ? '' : 'font-semibold']"
+                    >{{ item.Name }}</span
+                  >
+                  <span class="w-1/5 text-right" v-if="item.Value !== 'b'">{{
+                    item.Value
+                  }}</span>
                 </div>
               </div>
             </div>
@@ -214,7 +240,7 @@ const colorMetal = reactive({ colorId: 1 })
           <div class="flex sm:hidden flex-col gap-2">
             <span class="font-semibold text-lg">У вас есть вопросы?</span>
             <button
-              @click="$refs.modalConsult.show = true"
+              @click="reqProduct(data.product.data)"
               class="flex gap-2 hover:gap-4 justify-center items-center group  hover:bg-neutral-700 border border-neutral-700 py-6 rounded-md anime lg:max-w-[320px]"
             >
               <svg
@@ -244,7 +270,8 @@ const colorMetal = reactive({ colorId: 1 })
           <productsProductV1
             v-for="item in data.product.data.attributes.up_sales.data"
             :key="item.id"
-            :data="item"
+            :dataProduct="item"
+            @productOpen="productOpenModal(item)"
           />
         </div>
       </section>

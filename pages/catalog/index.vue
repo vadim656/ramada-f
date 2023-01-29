@@ -1,58 +1,46 @@
-<script>
+<script setup>
 import gql from 'graphql-tag'
-import PRODUCT_ALL_CATALOG from '~/graphql/query/PRODUCT_ALL_CATALOG.gql'
+import PRODUCT_CAT from '~/graphql/query/PRODUCT_CAT.gql'
 import PRODUCT_FILTERS from '~/graphql/query/PRODUCT_FILTERS.gql'
 import fFiltersAll from '~/components/filters/f-filters-all.vue'
 
-export default {
-  components: { fFiltersAll },
-  data () {
-    return {
-      searchInput: ''
-    }
-  },
-  computed: {},
-  async setup () {
-    let filtersActiveStatus = reactive({active: true})
-    let variables = reactive({ PAGE: 6 })
-    const notFilters = computed(() => {
-      return filtersActiveStatus.active == true ? PRODUCT_ALL_CATALOG : PRODUCT_FILTERS
-    })
+const route = useRoute()
+let filtersActiveStatus = reactive({ active: true })
+let variables = reactive({ PAGE: 6, URL: route.params.cat })
+const notFilters = computed(() => {
+  return filtersActiveStatus.active == true ? PRODUCT_CAT : PRODUCT_FILTERS
+})
 
-    // filters
+// filters
 
-    const applyFilters = data => {
-      console.log('click' , filtersActiveStatus.active);
-      if (filtersActiveStatus.active == true) {
-        filtersActiveStatus.active = false
-      } else {
-        filtersActiveStatus.active = true
-      }
-    }
-    // filters end
-
-    const { result } = useQuery(notFilters, variables)
-
-    const increment = () => {
-      variables.PAGE = variables.PAGE + 3
-    }
-    // watch(notFilters, (newValue, oldValue) => {
-    //   console.log('watch', newValue, oldValue)
-    //   console.log('filters', notFilters)
-    //   console.log(result.value)
-    // })
-    // watch(filtersActiveStatus, (newValue, oldValue) => {
-    //   console.log('watch filters', newValue, oldValue)
-    // })
-
-    return { increment, variables, applyFilters, result, filtersActiveStatus }
-  },
-  methods: {
-    productOpen (data) {
-      this.$refs.modalForm.show = true
-      this.$refs.modalForm.data = data
-    }
+const applyFilters = data => {
+  if (filtersActiveStatus.active == true) {
+    filtersActiveStatus.active = false
+  } else {
+    filtersActiveStatus.active = true
   }
+}
+
+const { result } = useQuery(notFilters, variables)
+
+// watchEffect(route.params.cat, () => {
+//   console.log('id', route.params.cat)
+//   variables.URL = route.params.cat
+// })
+
+// filters end
+
+// pagination
+const increment = () => {
+  variables.PAGE = variables.PAGE + 3
+}
+// pagination end
+
+const modalForm = ref(null)
+
+const productOpenModal = product => {
+  modalForm.value.show.val = true
+  modalForm.value.data = product
 }
 </script>
 
@@ -70,8 +58,8 @@ export default {
           <productsProductV1
             v-for="item in result.products.data"
             :key="item.id"
-            :data="item"
-            @productOpen="productOpen"
+            :dataProduct="item"
+            @productOpen="productOpenModal(item)"
           />
         </div>
         <div class="flex justify-between items-center" v-if="result">

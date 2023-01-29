@@ -13,7 +13,7 @@
           производителя!</span
         >
         <div class="flex flex-col sm:flex-row justify-between gap-3 sm:gap-6">
-          <b-arrows-form @click="$refs.modalMain.show = true"
+          <b-arrows-form @click="mainOpenModal"
             >Оставить заявку</b-arrows-form
           >
           <b-arrows-form @click="this.$router.push({ path: '/catalog' })"
@@ -33,19 +33,15 @@
   </div>
 </template>
 
-<script>
+
+
+<script setup>
 import bArrowsForm from './buttons/b-arrows-form.vue'
-export default {
-  components: { bArrowsForm },
-  // setup () {
-  //   const router = useRouter()
-  //   const getCatalog = router.push({ path: '/catalog' })
-  // },
-  methods: {
-    linkCatalog () {
-      console.log('d')
-    }
-  }
+
+const modalMain = ref(null)
+
+const mainOpenModal = () => {
+  modalMain.value.show.val = true
 }
 </script>
 

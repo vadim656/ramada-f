@@ -8,18 +8,18 @@
       class="w-full h-auto object-cover rounded-md"
     />
     <nuxt-link
-      :to="`/catalog/products/` + data.id"
+      :to="`/catalog/products/` + dataProduct.id"
       class="w-full text-xl font-semibold"
-      >{{ data.attributes.Name }}
+      >{{ dataProduct.attributes.Name }}
     </nuxt-link>
     <div class="flex flex-col text-sm">
       <div
         class="flex gap-2 w-full justify-start"
-        v-if="data.attributes.Characteristic.Proizvidotel"
+        v-if="dataProduct.attributes.Characteristic.Proizvidotel"
       >
         <span class=""
           >Производитель:
-          {{ data.attributes.Characteristic.Proizvidotel }}</span
+          {{ dataProduct.attributes.Characteristic.Proizvidotel }}</span
         >
       </div>
       <!-- <div class="flex gap-2 w-full justify-start">
@@ -27,10 +27,10 @@
       </div> -->
       <div
         class="flex gap-2 w-full justify-start"
-        v-if="data.attributes.Characteristic.Razmer"
+        v-if="dataProduct.attributes.Characteristic.Razmer"
       >
         <span class=""
-          >Размер: {{ data.attributes.Characteristic.Razmer }}</span
+          >Размер: {{ dataProduct.attributes.Characteristic.Razmer }}</span
         >
       </div>
     </div>
@@ -39,28 +39,22 @@
       <div class="flex flex-col">
         <span>Цена:</span>
         <span class="text-xl"
-          >{{ data.attributes.Price.toLocaleString('ru-RU') }} ₽ / шт</span
+          >{{ dataProduct.attributes.Price.toLocaleString('ru-RU') }} ₽ / шт</span
         >
       </div>
 
-      <b-add-cart :dataModal="data" @click="formOpen" />
+      <b-add-cart :dataModal="dataProduct" @click="$emit('productOpen')" />
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import bAddCart from '../buttons/b-add-cart.vue'
-export default {
-  props: {
-    data: Object
-  },
-  components: { bAddCart },
-  methods: {
-    formOpen () {
-      this.$emit('productOpen', this.data)
-    }
-  }
-}
+
+const props = defineProps(['dataProduct'])
+
+
+
 </script>
 
 <style></style>

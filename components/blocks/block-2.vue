@@ -5,7 +5,8 @@
       <productsProductV1
         v-for="item in data.products.data"
         :key="item.id"
-        :data="item"
+        :dataProduct="item"
+        @productOpen="productOpenModal(item)"
       />
     </div>
     <span v-else>Загружается...</span>

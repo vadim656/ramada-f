@@ -82,7 +82,7 @@ export default {
           <FiltersFFilter :data="30" :name="'3х3х2,2м'" />
         </div> -->
       </div>
-      <button
+      <!-- <button
         class="group flex gap-2 hover:gap-4 justify-center items-center bg-neutral-800 hover:bg-neutral-700 py-6 rounded-md anime"
       >
         <svg
@@ -101,7 +101,7 @@ export default {
         </svg>
 
         <span class="text-base text-white">Сбросить фильтр</span>
-      </button>
+      </button> -->
     </div>
     <!-- filters desctop end -->
     <!-- filters mobile -->
@@ -145,7 +145,7 @@ export default {
           </svg>
         </div>
 
-        <div
+        <!-- <div
           @click="selectFilter('filters')"
           class=" flex items-center justify-center gap-3 text-sm"
         >
@@ -181,7 +181,7 @@ export default {
               d="M6 18L18 6M6 6l12 12"
             />
           </svg>
-        </div>
+        </div> -->
       </div>
       <!-- dropdown block -->
       <div
