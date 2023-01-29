@@ -1,5 +1,5 @@
 query PRODUCT_ALL($PAGE: Int!) {
-  products(pagination: { pageSize: $PAGE}) {
+  products(pagination: { pageSize: $PAGE }) {
     meta {
       pagination {
         total
@@ -21,7 +21,7 @@ query PRODUCT_ALL($PAGE: Int!) {
         Active
         Characteristic {
           Proizvidotel
-          Kolvo
+
           Razmer
         }
         Img {

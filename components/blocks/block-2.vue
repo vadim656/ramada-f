@@ -8,7 +8,8 @@
         :data="item"
       />
     </div>
-    <div class="flex justify-between items-center">
+    <span v-else>Загружается...</span>
+    <div class="flex justify-between items-center" v-if="data">
       <button
         @click="increment"
         v-if="data.products.meta.pagination.total > variables.PAGE"
@@ -26,6 +27,7 @@
         </div>
       </div>
     </div>
+    <span v-else>Загружается...</span>
   </div>
 </template>
 
