@@ -23,7 +23,7 @@
       </div>
       <div class="sm:w-1/2 flex justify-center">
         <img
-          class="w-4/5 sm:w-full aspect-[6/5]"
+          class="w-4/5 sm:w-full aspect-[6/5] object-contain"
           src="~/assets/img/main-v.png"
           alt=""
         />
