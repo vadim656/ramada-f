@@ -8,7 +8,7 @@
             runtimeConfig.apiBase + item.attributes.Img.data[0].attributes.url
           "
           alt=""
-          class="rounded-md w-full h-full object-cover"
+          class="rounded-md w-full h-full object-cover aspect-[6/5]"
         />
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <button
-    class="flex gap-2 hover:bg-neutral-800 hover:text-white items-center border sm:border-2 border-neutral-800 group py-3 sm:py-6 px-6 sm:px-12 rounded-md anime"
+    class="flex gap-2 hover:bg-neutral-800 hover:text-white justify-center items-center border sm:border-2 border-neutral-800 group py-3 sm:py-6 px-6 sm:px-12 rounded-md anime"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

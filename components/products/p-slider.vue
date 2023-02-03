@@ -8,7 +8,7 @@
       class="mySwiperProduct"
     >
       <Swiper-slide v-for="(item, i) in slides" :key="i">
-        <img :src="'https://admin.ramada.pro' + item.attributes.url" alt="" />
+        <img :src="'https://admin.ramada.pro' + item.attributes.url" alt="" class="aspect-[6/5] object-cover"/>
       </Swiper-slide>
     </Swiper>
   </div>

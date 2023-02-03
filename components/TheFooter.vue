@@ -28,7 +28,7 @@
         </div>
         <div class="flex justify-between gap-10">
           <div class="flex flex-col sm:flex-row gap-2 text-sm">
-            <span>ООО “РУ.ТРЕЙД” ИНН/КПП/ОГРН </span>
+            <span>ООО "РАМАДА" ИНН/КПП/ОГРН </span>
             <span>4705097052/470501001/1224700017464</span>
             <span>Симферополь ул. Генерала Васильева 22А</span>
           </div>

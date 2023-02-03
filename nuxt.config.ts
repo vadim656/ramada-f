@@ -35,5 +35,16 @@ export default defineNuxtConfig({
       }
     }
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/apollo']
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/apollo',
+    'yandex-metrika-module-nuxt3'
+  ],
+  yandexMetrika: {
+    id: '92218427',
+    webvisor: true,
+    consoleLog: true,
+    clickmap: true,
+    useCDN: false
+  }
 })

@@ -13,7 +13,7 @@
       <div class="flex flex-col items-end">
         <div class="flex gap-1 items-center">
           <img  src="~/assets/img/phone.svg" alt="" />
-          <a href="tel:89891462808" class="text-xs sm:text-sm">+7 (989) 146-28-08</a>
+          <a href="tel:89893462808" class="text-xs sm:text-sm">+7 (989) 346-28-08</a>
         </div>
         <span class="text-xs hidden sm:block">Звоните, мы работаем</span>
       </div>

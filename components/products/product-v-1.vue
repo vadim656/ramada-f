@@ -5,7 +5,7 @@
     <img
       src="~/assets/img/photo/product-test.jpg"
       alt=""
-      class="w-full h-auto object-cover rounded-md"
+      class="w-full h-auto object-cover rounded-md aspect-[6/5]"
     />
     <nuxt-link
       :to="`/catalog/products/` + dataProduct.id"
